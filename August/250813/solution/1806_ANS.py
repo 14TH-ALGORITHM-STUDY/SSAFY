@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 N, S = map(int, input().split())
 A = list(map(int, input().split()))
 
@@ -15,11 +12,9 @@ cur = 0
 # r = 오른쪽 인덱스
 for R in range(N):
     # current = 현재 배열안에 있는 수들의 합
-    cur += A[R]\
-    
-    #[5]
+    cur += A[R]
 
-    # cur > 15
+
     while cur >= S:
         # 현재 배열의 길이와 초기화값 최대값을 비교해서 ans변수
         ans = min(ans, R - L + 1)

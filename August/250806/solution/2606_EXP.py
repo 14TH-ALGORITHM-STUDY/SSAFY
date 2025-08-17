@@ -15,7 +15,7 @@ C = int(input()) # 컴퓨터의 수를 입력 받음 C = 7
 L = int(input()) # 컴퓨터 쌍의 수 L = 6
 
 g = [[] for i in range(C + 1)] # g 이중 리스트 컴퓨터 개수 + 1 생성
-# [[], [], [], [], [], [], [], []]
+# [[0], [1], [2], [3], [4], [5], 6[], 7[]]
 
 vstd = [False] * (C + 1) # [False, False, False... 컴퓨터의 수 + 1 만큼]
 # [False, False, False, False, False, False, False, False]
