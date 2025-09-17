@@ -8,9 +8,8 @@
 # ⚠️ 제출 전 코드 최종 점검 (입력 형식, 조건 처리 등)
 ################################################################################
 from collections import deque
-import copy
 
-def build_wall(wall_cnt):
+def build_wall(wall_cnt, build_list):
     # 벽 3개가 세워지면 바이러스를 퍼트려 본다.
     if wall_cnt == 3:
         bfs()
@@ -20,7 +19,7 @@ def build_wall(wall_cnt):
         for j in range(M):
             if graph[i][j] == 0:
                 graph[i][j] = 1 # 벽을 세우고
-                build_wall(wall_cnt+1) # 다시 두번째 벽 세우러 간다
+                build_wall(wall_cnt+1, build_list + ) # 다시 두번째 벽 세우러 간다
                 graph[i][j] = 0
 
 def bfs():
@@ -57,6 +56,6 @@ N, M = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
 
 max_safe_area = 0
-build_wall(0)
+build_wall(0, [])
 
 print(max_safe_area)
