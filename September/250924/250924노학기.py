@@ -16,7 +16,7 @@ m, n = map(int, input().split())
 miro = [list(input().strip()) for _ in range(n)]
 
 # 각 칸까지의 최소 비용(부순 벽의 개수)을 저장할 배열
-# 초깃값은 매우 큰 수로 설정하여 방문하지 않았음을 표시
+# 초깃값은 -1로 설정하여 방문하지 않았음을 표시
 dist = [[-1] * m for _ in range(n)]
 
 q = deque()
