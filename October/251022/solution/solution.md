@@ -1,23 +1,23 @@
 
 # 1. 문제 상황 이해
-![문제 이해](image1.png)
+![문제 이해](./image/mage1.png)
 
 "순서대로" 일어난다
 
 1번째 단계에 대해서 착각하기 쉽다.
 
 ## 1-1-0. 초기상태
-![초기 상태](image2.png)
+![초기 상태](./image/image2.png)
 
 ## 1-1-1. 벨트 이동
 현재는, 제일 처음의 상태이므로 벨트 위에 로봇이 없는 상태로 한 칸 회전하게 된다.
-![1단계](image3.png)
+![1단계](./image/image3.png)
 
 ## 1-1-2. 로봇 이동
 현재, 벨트 위의 로봇이 없으므로, 아무런 일도 일어나지 않는다.
 
 ## 1-1-3. 로봇 적재
-![3단계](image4.png)
+![3단계](./image/image4.png)
 
 이런식으로 **내구도가 0인 칸의 개수가 K개 이상이 될 때까지** 반복한다.
 
@@ -31,18 +31,18 @@
 단순 구현을 하는데는 많은 방법이 존재하겠지만, 나는 이렇게 했다. (바보 같을 수 있음 이해좀 ㅈㅅ)
 
 ### 전반적인 아이디어
-![테스트 케이스 4번](image5.png)
+![테스트 케이스 4번](./image/image5.png)
 ```
 컨테이너의 회전을 배열의 회전으로 구현하기엔 계산량이 너무 많아진다.
 컨테이너의 회전을 배열의 index로 간접적으로 접근하자!
 ```
-![컨베이어 회전1](image6.png)
+![컨베이어 회전1](./image/image6.png)
 ```
 1단계
 load_position(적재 위치) = 2N
 unload_position(하역 위치) = N-1
 ```
-![컨베이어 회전2](image7.png)
+![컨베이어 회전2](./image/image7.png)
 ```
 2단계
 load_position(적재 위치) = 2N-1
@@ -65,7 +65,7 @@ struct conveyor
 // conveyor 구조를 가지는 벡터 선언 (파이썬에서 list)
 vector<conveyor> v;
 ```
-![vector 내부 구조](image8.png)
+![vector 내부 구조](./image/image8.png)
 ### 컨베이어 이동 함수
 ```cpp
 void moveConveyor()
@@ -160,11 +160,11 @@ void moveRobot()
     }
 }
 ```
-![로봇 이동](image9.png)
-![로봇 이동](image10.png)
-![로봇 이동](image11.png)
-![로봇 이동](image12.png)
-![로봇 이동](image13.png)
+![로봇 이동](./image/image9.png)
+![로봇 이동](./image/image10.png)
+![로봇 이동](./image/image11.png)
+![로봇 이동](./image/image12.png)
+![로봇 이동](./image/image13.png)
 ```
 1. 이동할 로봇이 존재하는지 확인
 2. 존재한다면 => 1. 이동하려는 위치에 로봇이 있는가? / 2. 이동하려는 위치에 내구성이 0인가?
@@ -200,7 +200,7 @@ void moveRobot()
 이렇기에 단순한 구현 문제에서 <span style="color:red">**적합한 자료 구조를 사용할 생각을 잘 못하게 된다.**</span>
 
 ### deque 자료구조 이해
-![deque](image14.png)
+![deque](./image/image14.png)
 ---
 ### deque_python
 ```python
@@ -242,7 +242,7 @@ print("마지막 값 확인 :", d[-1])
 if d:
     print("덱에는 원소가 남아있습니다.")
 ```
-![result_deque](image16.png)
+![result_deque](./image/image16.png)
 ---
 ### deque_cpp
 ```cpp
@@ -294,7 +294,7 @@ int main()
 	return 0;
 }
 ```
-![result_deque](image15.png)
+![result_deque](./image/image15.png)
 ---
 ### python 구현 (김규민)
 ```python
