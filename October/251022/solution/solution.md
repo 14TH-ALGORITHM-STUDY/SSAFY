@@ -195,3 +195,104 @@ void moveRobot()
 컨베이어 회전 → 로봇 하역 → 로봇 이동 → 로봇 하역 → 로봇 적재 (반복)
 ```
 ## 2-2. deque 자료구조를 사용한 구현
+주로 dijkstra, bfs 등에서 특별한 자료구조를 많이 사용한다.
+
+이렇기에 단순한 구현 문제에서 <span style="color:red">**적합한 자료 구조를 사용할 생각을 잘 못하게 된다.**</span>
+
+### deque 자료구조 이해
+![deque](image14.png)
+---
+### deque_python
+```python
+from collections import deque
+
+# deque 생성
+d = deque()
+
+# 원소 뒷방향으로 추가
+d.append(2)
+d.append(3)
+d.append(4)
+
+# 원소 앞방향으로 추가
+d.appendleft(1)
+d.appendleft(0)
+
+# 현재 deque 출력
+for item in d:
+    print(item, end=' ')
+print()
+
+# 첫 번째 원소 제거
+d.popleft()
+
+# 마지막 원소 제거
+d.pop()
+
+# 현재 deque 출력
+for item in d:
+    print(item, end=' ')
+print()
+
+# 첫 번째, 마지막 값 확인
+print("첫번째 값 확인 :", d[0])
+print("마지막 값 확인 :", d[-1])
+
+# 덱 비어있는지 여부 확인
+if d:
+    print("덱에는 원소가 남아있습니다.")
+```
+![result_deque](image16.png)
+---
+### deque_cpp
+```cpp
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+deque<int> d;
+
+int main()
+{
+	//원소 뒷방향으로 추가
+	d.push_back(2);
+	d.push_back(3);
+	d.push_back(4);
+
+	//원소 앞방향으로 추가
+	d.push_front(1);
+	d.push_front(0);
+
+	for (int i = 0; i < d.size(); i++)
+	{
+		cout << d[i] << " ";
+	}
+
+	cout << endl;
+	
+	//첫 번째 원소 제거
+	d.pop_front();
+
+	//마지막 원소 제거
+	d.pop_back();
+
+	for (int i = 0; i < d.size(); i++)
+	{
+		cout << d[i] << " ";
+	}
+
+	cout << endl;
+
+	cout << "첫번째 값 확인 : " <<d.front() << endl;
+	cout << "마지막 값 확인 : " <<d.back() << endl;
+
+	//덱 비어있는지 여부 확인
+	if (!d.empty())
+		cout << "덱에는 원소가 남아있습니다." << endl;
+
+	return 0;
+}
+```
+![result_deque](image15.png)
+---
