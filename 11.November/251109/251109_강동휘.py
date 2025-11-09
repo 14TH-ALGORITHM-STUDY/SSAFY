@@ -117,7 +117,6 @@ board = [list(map(int, input().split())) for _ in range(N)]
 
 # 라벨링
 visited = [[False] * M for _ in range(N)]
-# 문제에서 섬 최대 6개라서 7칸 짜리 만든 네 스타일 유지
 islands = [[] for _ in range(7)]
 label_num = 1
 for row in range(N):
