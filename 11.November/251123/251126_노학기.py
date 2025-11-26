@@ -28,3 +28,24 @@ T = int(input())
 for _ in range(T):
     n = int(input())
     print(dp[n])
+
+# 순서가 중요하지 않을 때 (조합, 이 문제)
+# 동전 종류가 바깥쪽 루프
+for coin in [1, 2, 3]:
+    for i in range(coin, n + 1):
+        dp[i] += dp[i - coin]
+
+# 순서가 중요할 때 (순열, 백준 9095번)
+# 만드는 숫자 i가 바깥쪽 루프
+for i in range(1, n + 1):
+    for coin in [1, 2, 3]:
+        if i >= coin:
+            dp[i] += dp[i - coin]
+
+
+
+
+
+
+
+
